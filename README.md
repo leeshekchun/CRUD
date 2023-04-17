@@ -1,0 +1,1 @@
+This project is for practising building a full-stack CRUD app using React.js, Node.js, and Mysql.
