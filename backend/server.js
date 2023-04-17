@@ -15,7 +15,12 @@ const db = await mysql.createPool({
 });
 
 app.get("/", (req, res) => {
-    res.json("Connected to the CRUD database.")
+    // res.json("Connected to the CRUD database.")
+    const sql = "SELECT * FROM Owner";
+    db.query(sql, (err, data) => {
+        if(err) return app.json("Error");
+        return res.json(data);
+    })
 })
 }
 app.listen(3306, () => (
